@@ -113,14 +113,14 @@
                     {
                         "name": "indoor",
                         "routingType": "Proxy",
-                        "endpoint": "[concat('https://api-backend.azurewebsites.net/api/forward')]"
+                        "endpoint": "[concat('https://', parameters('funcName'), '.azurewebsites.net/api/forward')]"
                     }
                 ],
                 "resourceTypes": [
                     {
                         "name": "indoor",
                         "routingType": "Proxy",
-                        "endpoint": "[concat('https://api-backend.azurewebsites.net/api/forward')]"
+                        "endpoint": "[concat('https://', parameters('funcName'), '.azurewebsites.net/api/forward')]"
                     }
                 ]
             }
