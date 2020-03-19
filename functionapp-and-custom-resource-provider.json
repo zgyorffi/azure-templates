@@ -29,6 +29,13 @@
             "metadata": {
                 "description": "The URI to the uploaded function zip file"
             }
+        },
+        "iotHubConnectionString": {
+            "defaultValue": "",
+            "type": "String",
+            "metadata": {
+                "description": "Connection string of the IOT Hub that is the target of the function app"
+            }
         }
     },
     "resources": [
@@ -75,6 +82,10 @@
                         {
                             "name": "WEBSITE_RUN_FROM_PACKAGE",
                             "value": "[parameters('zipFileBlobUri')]"
+                        },
+                        {
+                            "name": "IotHubConnectionString",
+                            "value": "[parameters('iotHubConnectionString')]"
                         }
                     ]
                 },
