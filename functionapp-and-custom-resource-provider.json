@@ -108,6 +108,9 @@
             "apiVersion": "2018-09-01-preview",
             "name": "NDAC",
             "location": "[parameters('location')]",
+            "dependsOn": [
+                "[concat('Microsoft.Web/sites/',parameters('funcName'))]"
+            ],
             "properties": {
                 "actions": [
                     {
