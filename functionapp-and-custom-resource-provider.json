@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "funcName": {
-            "defaultValue": "api-backend",
+            "defaultValue": "[concat('api-backend', uniquestring(resourceGroup().id))]",
             "type": "String",
             "metadata": {
                 "description": "The unique name of the function application"
@@ -111,14 +111,24 @@
             "properties": {
                 "actions": [
                     {
-                        "name": "indoor",
+                        "name": "indoor-base",
+                        "routingType": "Proxy",
+                        "endpoint": "[concat('https://', parameters('funcName'), '.azurewebsites.net/api/forward')]"
+                    },
+                    {
+                        "name": "indoor-tags-status",
                         "routingType": "Proxy",
                         "endpoint": "[concat('https://', parameters('funcName'), '.azurewebsites.net/api/forward')]"
                     }
                 ],
                 "resourceTypes": [
                     {
-                        "name": "indoor",
+                        "name": "indoor-base",
+                        "routingType": "Proxy",
+                        "endpoint": "[concat('https://', parameters('funcName'), '.azurewebsites.net/api/forward')]"
+                    },
+                    {
+                        "name": "indoor-tags-status",
                         "routingType": "Proxy",
                         "endpoint": "[concat('https://', parameters('funcName'), '.azurewebsites.net/api/forward')]"
                     }
