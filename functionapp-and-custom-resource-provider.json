@@ -24,7 +24,7 @@
             }
         },
         "zipFileBlobUri": {
-            "defaultValue": "https://github.com/Azure/azure-docs-json-samples/blob/master/custom-providers/_artifacts/functionpackage.zip?raw=true",
+            "defaultValue": "https://8a29523961ea4fd48fed.blob.core.windows.net/content/nokia-ndac-iot-forwarder-2.zip?sp=rl&st=2020-03-24T17:13:55Z&se=2020-04-25T17:13:00Z&sv=2019-02-02&sr=b&sig=JQZJf7gPZSgxwr3r7oDxWKePaMkdonfH%2Bjcx4l4y7TY%3D",
             "type": "String",
             "metadata": {
                 "description": "The URI to the uploaded function zip file"
@@ -109,7 +109,7 @@
             "name": "NDAC",
             "location": "[parameters('location')]",
             "dependsOn": [
-                "[concat('Microsoft.Web/sites/',parameters('funcName'))]"
+                "[concat('Microsoft.Web/sites/', parameters('funcName'))]"
             ],
             "properties": {
                 "actions": [
