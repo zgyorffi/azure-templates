@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "funcName": {
-            "defaultValue": "[concat('api-backend', uniquestring(resourceGroup().id))]",
+            "defaultValue": "[concat('api-backend-', uniquestring(resourceGroup().id))]",
             "type": "String",
             "metadata": {
                 "description": "The unique name of the function application"
